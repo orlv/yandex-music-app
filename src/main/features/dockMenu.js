@@ -8,7 +8,7 @@ let i18n = new (require("../locales/i18n"))();
 let tray = null;
 const trackInfo = new MenuItem({ label: "  –", enabled: false });
 const like = new MenuItem({
-  label: i18n.__("Love"),
+  label: i18n.__("Like"),
   type: "checkbox",
   enabled: false,
   click: () => playerCmd("toggleLike"),
@@ -141,7 +141,7 @@ function handleTrackChange(currentTrack) {
   if (hasCurrentTrack) {
     trackInfo.label = "  " + getLabelForTrack(currentTrack);
     like.checked = currentTrack.liked;
-    like.label = currentTrack.liked ? i18n.__("Loved") : i18n.__("Love");
+    like.label = currentTrack.liked ? i18n.__("Liked") : i18n.__("Like");
     dislike.checked = currentTrack.disliked;
     dislike.label = currentTrack.disliked ? i18n.__("Disliked") : i18n.__("Dislike");
   }

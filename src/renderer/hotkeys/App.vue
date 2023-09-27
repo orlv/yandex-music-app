@@ -60,7 +60,7 @@ export default defineComponent({
   data() {
     return {
       hotkeys: [
-        { id: "love", title: "Love", icon: "d-icon_heart" },
+        { id: "like", title: "Like", icon: "d-icon_heart" },
         { id: "dislike", title: "Dislike", icon: "d-icon_circle-crossed" },
         { id: "play", title: "Play", icon: "d-icon_play" },
         { id: "pause", title: "Pause", icon: "d-icon_pause" },

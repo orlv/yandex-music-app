@@ -1,6 +1,6 @@
 const { app, globalShortcut, systemPreferences } = require("electron");
 const { getTrackMetaData } = require("./playerMetaData");
-const { showLoveNotification, showTrackNotification } = require("./notifications");
+const { showLikeNotification, showTrackNotification } = require("./notifications");
 
 if (systemPreferences.isTrustedAccessibilityClient(false)) {
   app.on("will-quit", () => {
@@ -23,17 +23,17 @@ function registerCustomShortcuts() {
 
   registerGlobalHotkeys(hotkeys["previous_track"], "prev");
   registerGlobalHotkeys(hotkeys["next_track"], "next");
-  
+
   registerGlobalHotkeys(hotkeys["go_backward"], "goBackward");
   registerGlobalHotkeys(hotkeys["go_forward"], "goForward");
 
-  registerGlobalHotkeys(hotkeys["love"], "love", () => {
-    showLoveNotification(true);
+  registerGlobalHotkeys(hotkeys["like"], "like", () => {
+    showLikeNotification(true);
   });
   registerGlobalHotkeys(hotkeys["dislike"], "dislike");
   registerGlobalHotkeys(hotkeys["like_unlike"], "toggleLike", () => {
-    let loved = !getTrackMetaData().liked;
-    showLoveNotification(loved);
+    let liked = !getTrackMetaData().liked;
+    showLikeNotification(liked);
   });
 
   registerGlobalHotkeys(hotkeys["mute_unmute"], "toggleMute");

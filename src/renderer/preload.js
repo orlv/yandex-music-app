@@ -63,7 +63,7 @@ ipc.on("playerCmd", (_event, cmd) => {
     case "pause":
       externalAPI.togglePause(true);
       break;
-    case "love":
+    case "like":
       currentTrack = externalAPI.getCurrentTrack();
       currentTrack && !currentTrack.liked && externalAPI.toggleLike();
       break;

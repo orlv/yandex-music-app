@@ -4,7 +4,7 @@ const { getTrackMetaData, getCoverFilePath } = require("./playerMetaData");
 
 let lastNotification;
 
-exports.showLoveNotification = showLoveNotification;
+exports.showLikeNotification = showLikeNotification;
 exports.showTrackNotification = debounce(() => {
   const metaData = getTrackMetaData();
   let emoji;
@@ -16,9 +16,9 @@ exports.showTrackNotification = debounce(() => {
 }, 300);
 
 
-function showLoveNotification(loved) {
+function showLikeNotification(liked) {
   let emoji;
-  if (loved) {
+  if (liked) {
     emoji = "❤️ ";
   } else {
     emoji = "♡ ";
@@ -36,7 +36,7 @@ function createTrackNotification(titlePrefix) {
 
   let title = metaData.title;
   let subtitle = metaData.artist;
-  
+
   if (metaData.album)
     subtitle += ' — ' + metaData.album;
 
