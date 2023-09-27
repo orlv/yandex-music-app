@@ -4,3 +4,4 @@ build
 src/renderer/compiled
 /Makefile
 .yarn
+.idea
